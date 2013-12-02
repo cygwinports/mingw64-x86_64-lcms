@@ -1,0 +1,18 @@
+CROSS_HOST="x86_64-w64-mingw32"
+inherit cross
+
+NAME="mingw64-x86_64-lcms"
+VERSION=1.19
+RELEASE=1
+CATEGORY="Devel"
+SUMMARY="Little CMS library for Win64 toolchain"
+DESCRIPTION="Little CMS intends to be a small-footprint, speed optimized
+color management engine in open source form."
+HOMEPAGE="http://littlecms.com/"
+SRC_URI="http://littlecms.com/lcms-${VERSION}.tar.gz"
+SRC_DIR="lcms-${VERSION}"
+
+DIFF_EXCLUDES="icc34.h"
+
+CYGCONF_ARGS="--without-python"
+MAKEOPTS+=" bin_PROGRAMS= man_MANS= "
